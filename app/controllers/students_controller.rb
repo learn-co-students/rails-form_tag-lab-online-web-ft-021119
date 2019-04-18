@@ -1,3 +1,4 @@
+
 class StudentsController < ApplicationController
 
   def index
@@ -12,7 +13,10 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(first_name: params[:first_name], last_name: params[:last_name])
+    @student = Student.new
+    @student.first_name = params[:student][:first_name]
+    @student.last_name = params[:student][:last_name]
+    #binding.pry
     if @student.save
       redirect_to student_path(@student)
     else
