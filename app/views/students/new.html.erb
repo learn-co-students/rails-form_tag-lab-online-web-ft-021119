@@ -1,0 +1,10 @@
+<h1>Student Form</h1>
+
+<form method = "post" action ="<%= create_student_path %>">
+
+<%= form_tag create_student_path  do %>
+ First Name : <%= text_field_tag 'student[first_name]' %><br>
+ Last Name : <%= text_field_tag 'student[last_name]'%>
+ <input type ="submit" value ="Submit Student" ><br>
+<% end %>
+</form>
